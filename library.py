@@ -78,14 +78,14 @@ def search_replace(search, replace, file_name, file_path_name):
     with open(file_path_name, "w") as file:
         file.write(filedata)
 
-def parse_remove_line(file_path_name):
+def parse_remove_line(file_path_name, search_string):
     try:
         with open(file_path_name, 'r') as fr:
             lines = fr.readlines()
  
         with open(file_path_name, 'w') as fw:
             for line in lines:   
-                if line.find('Custom_BMIDE_Templates') == -1:
+                if line.find(search_string) == -1:
                     fw.write(line)
     except:
         print("Could not parse the file...")
