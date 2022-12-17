@@ -124,3 +124,8 @@ def check_if_file_exists(my_file):
     else:
         print(str(my_file) + " does not exists...")
         exit(1)
+
+def list_filenames_wit_specific_ext(files_loc, file_ext):
+    file_names = glob.glob(container_yml_files)
+    for file_name in file_names:
+        print(file_name)
